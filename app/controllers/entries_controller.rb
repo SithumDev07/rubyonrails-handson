@@ -3,8 +3,8 @@ class EntriesController < ApplicationController
 
   # GET /entries or /entries.json
   def index
-    @entries = Entry.all
-  end
+    @entries = Entry.where("created_at >= ?", Date.today)
+  end 
 
   # GET /entries/1 or /entries/1.json
   def show
